@@ -38,14 +38,9 @@
             this.groupBoxEmpfangeneNachricht = new System.Windows.Forms.GroupBox();
             this.textBoxEmfangeneNachricht = new System.Windows.Forms.TextBox();
             this.timerUpdateGui = new System.Windows.Forms.Timer(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.test2DataSet = new ChatmailGUI.test2DataSet();
-            this.test2DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+        
             this.groupBoxNachrichtVerfassen.SuspendLayout();
             this.groupBoxEmpfangeneNachricht.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.test2DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.test2DataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxNachrichtVerfassen
@@ -122,7 +117,6 @@
             this.groupBoxEmpfangeneNachricht.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxEmpfangeneNachricht.Controls.Add(this.dataGridView1);
             this.groupBoxEmpfangeneNachricht.Controls.Add(this.textBoxEmfangeneNachricht);
             this.groupBoxEmpfangeneNachricht.Location = new System.Drawing.Point(12, 207);
             this.groupBoxEmpfangeneNachricht.Name = "groupBoxEmpfangeneNachricht";
@@ -150,24 +144,6 @@
             this.timerUpdateGui.Interval = 1000;
             this.timerUpdateGui.Tick += new System.EventHandler(this.timerUpdateGui_Tick);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 27);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(478, 150);
-            this.dataGridView1.TabIndex = 5;
-            // 
-            // test2DataSet
-            // 
-            this.test2DataSet.DataSetName = "test2DataSet";
-            this.test2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // test2DataSetBindingSource
-            // 
-            this.test2DataSetBindingSource.DataSource = this.test2DataSet;
-            this.test2DataSetBindingSource.Position = 0;
-            // 
             // FormChatmail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,9 +160,6 @@
             this.groupBoxNachrichtVerfassen.PerformLayout();
             this.groupBoxEmpfangeneNachricht.ResumeLayout(false);
             this.groupBoxEmpfangeneNachricht.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.test2DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.test2DataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -202,9 +175,7 @@
         private System.Windows.Forms.TextBox textBoxEmfangeneNachricht;
         private System.Windows.Forms.RadioButton radioButtonDBVerbindung;
         private System.Windows.Forms.Timer timerUpdateGui;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource test2DataSetBindingSource;
-        private test2DataSet test2DataSet;
+        
     }
 }
 

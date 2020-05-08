@@ -42,6 +42,10 @@ namespace ChatmailGUI
         }
         private void FormChatmail_Load(object sender, EventArgs e)
         {
+            Model model = new Model();
+            model.BenuterlisteErstellen();
+            
+
                 db.Connector("localhost", "ChatmailDB", "root", "");
                 DataTable benutzerLaden = db.ExecuteTable("Select Namen from Benutzer");
 
@@ -68,24 +72,21 @@ namespace ChatmailGUI
         {
             verbindungHerstellen();
            
-            DataTable nachrichtenTabelle = db.ExecuteTable("Select Zeitstempel, NachrichtenInhalt from nachrichten where SenderID = 1 ");
-            dataGridView1.Columns.Add("Zeitstempel", "Zeit");
-            dataGridView1.Columns.Add("NachrichtenInhalt", "Nachricht");
-            dataGridView1.Columns.Add("SenderID", "Sender");
-
-
+        
+            /*
             foreach (DataRow row in nachrichtenTabelle.Rows)
             {
-                /* 
-                 * if (item != vorhanden)
+                
+                  if (item != vorhanden)
                 {
                     textBoxEmfangeneNachricht.AppendText(item);
                 } 
-                */
+                
                 dataGridView1.
                 dataGridView1.Rows.Add(row);
 
             }
+            */
             db.Close();
         }
     }
