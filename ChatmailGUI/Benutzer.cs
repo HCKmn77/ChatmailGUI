@@ -12,7 +12,9 @@ namespace ChatmailGUI
         public string Name;
         public int ID;
 
-        
+       //Hallo 
+
+
 
 
     }
