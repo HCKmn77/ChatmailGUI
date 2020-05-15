@@ -38,7 +38,6 @@
             this.groupBoxEmpfangeneNachricht = new System.Windows.Forms.GroupBox();
             this.textBoxEmfangeneNachricht = new System.Windows.Forms.TextBox();
             this.timerUpdateGui = new System.Windows.Forms.Timer(this.components);
-        
             this.groupBoxNachrichtVerfassen.SuspendLayout();
             this.groupBoxEmpfangeneNachricht.SuspendLayout();
             this.SuspendLayout();
@@ -169,13 +168,12 @@
         private System.Windows.Forms.GroupBox groupBoxNachrichtVerfassen;
         private System.Windows.Forms.GroupBox groupBoxEmpfangeneNachricht;
         private System.Windows.Forms.Label labelEmpfänger;
-        private System.Windows.Forms.ComboBox comboBoxEmpfänger;
         private System.Windows.Forms.Button buttonSenden;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBoxEmfangeneNachricht;
         private System.Windows.Forms.RadioButton radioButtonDBVerbindung;
         private System.Windows.Forms.Timer timerUpdateGui;
-        
+        public System.Windows.Forms.ComboBox comboBoxEmpfänger;
     }
 }
 

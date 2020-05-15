@@ -19,11 +19,11 @@ namespace ChatmailGUI
         }
         
 
-        public void BenuterlisteErstellen()
+        public List<Benutzer> Benuterliste()
         {
             db.Open();
-            List<Benutzer> benutzerListe = new List<Benutzer>();
-            DataTable benutzerTabelle = db.ExecuteTable("Select * from Benutzer");
+                 List<Benutzer> benutzerListe = new List<Benutzer>();
+                DataTable benutzerTabelle = db.ExecuteTable("Select * from Benutzer");
            
             foreach ( DataRow zeile in benutzerTabelle.Rows)
             {
@@ -34,10 +34,10 @@ namespace ChatmailGUI
             }
 
             db.Close();
-
+            return benutzerListe;
         }
 
-        public void NachrtichtenlisteErstellen()
+        public void NachrtichtenListe()
         {
             db.Open();
             List<Nachricht> nachrichtenListe = new List<Nachricht>();

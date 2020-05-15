@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ChatmailGUI
 {
@@ -10,15 +11,14 @@ namespace ChatmailGUI
     {
         Model model = new Model();
             
-        public void BenutzerLaden()
+        public List<Benutzer> BenutzerLaden()
         {
-        model.BenuterlisteErstellen();
-        
+            return model.Benuterliste();
         }
 
         public void NachrichtenLaden() 
         {
-            model.NachrtichtenlisteErstellen();
+            model.NachrtichtenListe();
         }
 
         public void VerbindungPrüfen()

@@ -8,24 +8,8 @@ namespace ChatmailGUI
 {
     class ChatVerlauf
     {
-        Benutzer chatverlaufEmpfänger;
+        int  EmpfängerID;
         Nachricht chatVerlaufNachricht;
-
-        public ChatVerlauf(Benutzer empfänger, Nachricht nachricht)
-        {
-            chatverlaufEmpfänger = empfänger;
-            chatVerlaufNachricht = nachricht;
-        }
-
-        public Benutzer Empfänger()
-        {
-            return chatverlaufEmpfänger;
-        }
-
-        public Nachricht Nachricht()
-        {
-            return chatVerlaufNachricht;
-        }
 
     }
 }
