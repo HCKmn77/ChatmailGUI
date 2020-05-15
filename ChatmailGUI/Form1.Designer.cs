@@ -36,8 +36,8 @@
             this.comboBoxEmpfänger = new System.Windows.Forms.ComboBox();
             this.labelEmpfänger = new System.Windows.Forms.Label();
             this.groupBoxEmpfangeneNachricht = new System.Windows.Forms.GroupBox();
-            this.textBoxEmfangeneNachricht = new System.Windows.Forms.TextBox();
             this.timerUpdateGui = new System.Windows.Forms.Timer(this.components);
+            this.richTextBoxEmfpangeneNachrichten = new System.Windows.Forms.RichTextBox();
             this.groupBoxNachrichtVerfassen.SuspendLayout();
             this.groupBoxEmpfangeneNachricht.SuspendLayout();
             this.SuspendLayout();
@@ -116,7 +116,7 @@
             this.groupBoxEmpfangeneNachricht.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxEmpfangeneNachricht.Controls.Add(this.textBoxEmfangeneNachricht);
+            this.groupBoxEmpfangeneNachricht.Controls.Add(this.richTextBoxEmfpangeneNachrichten);
             this.groupBoxEmpfangeneNachricht.Location = new System.Drawing.Point(12, 207);
             this.groupBoxEmpfangeneNachricht.Name = "groupBoxEmpfangeneNachricht";
             this.groupBoxEmpfangeneNachricht.Size = new System.Drawing.Size(510, 192);
@@ -124,24 +124,22 @@
             this.groupBoxEmpfangeneNachricht.TabStop = false;
             this.groupBoxEmpfangeneNachricht.Text = "Empfangene Nachrichten";
             // 
-            // textBoxEmfangeneNachricht
-            // 
-            this.textBoxEmfangeneNachricht.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxEmfangeneNachricht.Location = new System.Drawing.Point(9, 19);
-            this.textBoxEmfangeneNachricht.Multiline = true;
-            this.textBoxEmfangeneNachricht.Name = "textBoxEmfangeneNachricht";
-            this.textBoxEmfangeneNachricht.ReadOnly = true;
-            this.textBoxEmfangeneNachricht.Size = new System.Drawing.Size(495, 167);
-            this.textBoxEmfangeneNachricht.TabIndex = 4;
-            this.textBoxEmfangeneNachricht.TabStop = false;
-            // 
             // timerUpdateGui
             // 
             this.timerUpdateGui.Enabled = true;
             this.timerUpdateGui.Interval = 1000;
             this.timerUpdateGui.Tick += new System.EventHandler(this.timerUpdateGui_Tick);
+            // 
+            // richTextBoxEmfpangeneNachrichten
+            // 
+            this.richTextBoxEmfpangeneNachrichten.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBoxEmfpangeneNachrichten.Location = new System.Drawing.Point(6, 19);
+            this.richTextBoxEmfpangeneNachrichten.Name = "richTextBoxEmfpangeneNachrichten";
+            this.richTextBoxEmfpangeneNachrichten.Size = new System.Drawing.Size(498, 167);
+            this.richTextBoxEmfpangeneNachrichten.TabIndex = 5;
+            this.richTextBoxEmfpangeneNachrichten.Text = "";
             // 
             // FormChatmail
             // 
@@ -158,7 +156,6 @@
             this.groupBoxNachrichtVerfassen.ResumeLayout(false);
             this.groupBoxNachrichtVerfassen.PerformLayout();
             this.groupBoxEmpfangeneNachricht.ResumeLayout(false);
-            this.groupBoxEmpfangeneNachricht.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -170,10 +167,10 @@
         private System.Windows.Forms.Label labelEmpfänger;
         private System.Windows.Forms.Button buttonSenden;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBoxEmfangeneNachricht;
         private System.Windows.Forms.RadioButton radioButtonDBVerbindung;
         private System.Windows.Forms.Timer timerUpdateGui;
         public System.Windows.Forms.ComboBox comboBoxEmpfänger;
+        private System.Windows.Forms.RichTextBox richTextBoxEmfpangeneNachrichten;
     }
 }
 

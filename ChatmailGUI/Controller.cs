@@ -16,9 +16,9 @@ namespace ChatmailGUI
             return model.Benuterliste();
         }
 
-        public void NachrichtenLaden() 
+        public List<Nachricht> NachrichtenLaden() 
         {
-            model.NachrtichtenListe();
+            return model.NachrichtenListe();
         }
 
         public void VerbindungPrüfen()

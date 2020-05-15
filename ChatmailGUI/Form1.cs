@@ -31,9 +31,14 @@ namespace ChatmailGUI
             {
                 comboBoxEmpfänger.Items.Add(benutzer.Name);
             }
-            contr.BenutzerLaden();
-            contr.NachrichtenLaden();
-           
+
+            foreach (Nachricht nachricht in contr.NachrichtenLaden())
+            {
+                richTextBoxEmfpangeneNachrichten.SelectionFont = new Font(richTextBoxEmfpangeneNachrichten.Font, FontStyle.Bold);
+                richTextBoxEmfpangeneNachrichten.AppendText("> " + nachricht.Zeitstempel + " " + nachricht.ID + ": ");
+                richTextBoxEmfpangeneNachrichten.SelectionFont = new Font(richTextBoxEmfpangeneNachrichten.Font, FontStyle.Regular);
+                richTextBoxEmfpangeneNachrichten.AppendText(nachricht.Text + "\n");
+            }           
         }
        
         private void buttonSenden_Click(object sender, EventArgs e)

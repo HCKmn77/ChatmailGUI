@@ -37,7 +37,7 @@ namespace ChatmailGUI
             return benutzerListe;
         }
 
-        public void NachrtichtenListe()
+        public List<Nachricht> NachrichtenListe()
         {
             db.Open();
             List<Nachricht> nachrichtenListe = new List<Nachricht>();
@@ -49,11 +49,12 @@ namespace ChatmailGUI
                 tempNachricht.Text = zeile["NachrichtenInhalt"].ToString();
                 tempNachricht.ID = int.Parse(zeile["NachrichtenID"].ToString());
                 tempNachricht.SenderID = int.Parse(zeile["SenderID"].ToString());
-
+                tempNachricht.Zeitstempel = zeile["Zeitstempel"].ToString();
                 nachrichtenListe.Add(tempNachricht);
             }
 
             db.Close();
+            return nachrichtenListe;
 
         }
 

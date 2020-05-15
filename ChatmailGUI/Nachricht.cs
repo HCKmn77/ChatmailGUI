@@ -10,7 +10,8 @@ namespace ChatmailGUI
     {
         public string Text;
         public int  SenderID;
-         public int ID;
+        public int ID;
+        public string Zeitstempel;
 
        
 
