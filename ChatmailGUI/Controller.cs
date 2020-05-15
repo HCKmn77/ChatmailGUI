@@ -8,14 +8,17 @@ namespace ChatmailGUI
 {
     class Controller
     {
+        Model model = new Model();
+            
         public void BenutzerLaden()
         {
-
+        model.BenuterlisteErstellen();
+        
         }
 
         public void NachrichtenLaden() 
         {
-        
+            model.NachrtichtenlisteErstellen();
         }
 
         public void VerbindungPrüfen()

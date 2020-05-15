@@ -9,25 +9,11 @@ namespace ChatmailGUI
     class Benutzer
     {
 
-        string benutzerName;
-        int benutzerID;
+        public string Name;
+        public int ID;
 
-        public Benutzer(string name, int id)
-        {
-           
-            
-            benutzerName = name;
-            benutzerID = id;
-        }
+        
 
-        public int id()
-        {
-            return benutzerID;
-        }
-        public string name()
-        {
-            return benutzerName;
-        }
 
     }
 }

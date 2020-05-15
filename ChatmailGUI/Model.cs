@@ -24,19 +24,14 @@ namespace ChatmailGUI
             db.Open();
             List<Benutzer> benutzerListe = new List<Benutzer>();
             DataTable benutzerTabelle = db.ExecuteTable("Select * from Benutzer");
-            for (int i = 0; i < benutzerTabelle.Rows.Count; i++)
+           
+            foreach ( DataRow zeile in benutzerTabelle.Rows)
             {
-                string x = 
-                Benutzer Jeremia = new Benutzer(benutzerTabelle.Rows[i][0].ToString(), Int32.Parse(benutzerTabelle.Rows[i][1].ToString()));
-                
-                
-                //benutzerListe.Add(new Benutzer() { Name = , ID = 1234 });
+                Benutzer tempBenutzer = new Benutzer();
+                tempBenutzer.Name = zeile["Namen"].ToString();
+                tempBenutzer.ID = int.Parse(zeile["BenutzerID"].ToString());
+                benutzerListe.Add(tempBenutzer);
             }
-
-
-            //comboBoxEmpfänger.Items.Add(benutzerLaden.Rows[i][0]);
-
-
 
             db.Close();
 
@@ -44,6 +39,21 @@ namespace ChatmailGUI
 
         public void NachrtichtenlisteErstellen()
         {
+            db.Open();
+            List<Nachricht> nachrichtenListe = new List<Nachricht>();
+            DataTable nachrichtenTabelle = db.ExecuteTable("Select * from Nachrichten");
+
+            foreach (DataRow zeile in nachrichtenTabelle.Rows)
+            {
+                Nachricht tempNachricht = new Nachricht();
+                tempNachricht.Text = zeile["NachrichtenInhalt"].ToString();
+                tempNachricht.ID = int.Parse(zeile["NachrichtenID"].ToString());
+                tempNachricht.SenderID = int.Parse(zeile["SenderID"].ToString());
+
+                nachrichtenListe.Add(tempNachricht);
+            }
+
+            db.Close();
 
         }
 

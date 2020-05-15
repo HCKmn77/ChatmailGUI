@@ -17,7 +17,7 @@ namespace ChatmailGUI
 
     public partial class FormChatmail : Form       
     {
-
+        Controller contr = new Controller();
         DBconnector db = new DBconnector();
 
 
@@ -42,20 +42,18 @@ namespace ChatmailGUI
         }
         private void FormChatmail_Load(object sender, EventArgs e)
         {
-            Model model = new Model();
-            model.BenuterlisteErstellen();
-            
+            contr.BenutzerLaden();
+            contr.NachrichtenLaden();
+            //    db.Connector("localhost", "ChatmailDB", "root", "");
+            //    DataTable benutzerLaden = db.ExecuteTable("Select Namen from Benutzer");
 
-                db.Connector("localhost", "ChatmailDB", "root", "");
-                DataTable benutzerLaden = db.ExecuteTable("Select Namen from Benutzer");
-
-                for (int i = 0; i < benutzerLaden.Rows.Count; i++)
-                {
-                    comboBoxEmpfänger.Items.Add(benutzerLaden.Rows[i][0]);
-                }
+            //    for (int i = 0; i < benutzerLaden.Rows.Count; i++)
+            //    {
+            //        comboBoxEmpfänger.Items.Add(benutzerLaden.Rows[i][0]);
+            //    }
 
 
-            db.Close();
+            //db.Close();
         }
        
 
