@@ -32,7 +32,6 @@ namespace ChatmailGUI
                 tempBenutzer.ID = int.Parse(zeile["BenutzerID"].ToString());
                 benutzerListe.Add(tempBenutzer);
             }
-
             db.Close();
             return benutzerListe;
         }
