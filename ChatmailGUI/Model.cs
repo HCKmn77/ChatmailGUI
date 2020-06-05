@@ -1,10 +1,7 @@
-﻿using System;
+﻿using it.schule;
+using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using it.schule;
 
 namespace ChatmailGUI
 {
@@ -12,20 +9,24 @@ namespace ChatmailGUI
     {
         DBconnector db = new DBconnector();
 
+        public string zuSendenderText;
+        public int empfängerID;
+        int senderID = 7; // <---- aktueller User: Robert Bosch
         public Model()
         {
             db.Connector("localhost", "ChatmailDB", "root", "");
 
         }
-        
+
+
 
         public List<Benutzer> Benuterliste()
         {
             db.Open();
-                 List<Benutzer> benutzerListe = new List<Benutzer>();
-                DataTable benutzerTabelle = db.ExecuteTable("Select * from Benutzer");
-           
-            foreach ( DataRow zeile in benutzerTabelle.Rows)
+            List<Benutzer> benutzerListe = new List<Benutzer>();
+            DataTable benutzerTabelle = db.ExecuteTable("Select * from Benutzer");
+
+            foreach (DataRow zeile in benutzerTabelle.Rows)
             {
                 Benutzer tempBenutzer = new Benutzer();
                 tempBenutzer.Name = zeile["Namen"].ToString();
@@ -57,9 +58,22 @@ namespace ChatmailGUI
 
         }
 
-        public void NachrichtHochladen() 
-        { 
-
+        public void NachrichtHochladen()
+        {
+            db.Open();
+            int nachrichtenID = 0;
+            string hochladenNachricht = "INSERT INTO nachrichten (NachrichtenID, NachrichtenInhalt, Zeitstempel, SenderID) VALUES(NULL, '" + zuSendenderText + "', current_timestamp(), '" + senderID + "');";
+            string getNachrichtenID = "SELECT NachrichtenID FROM nachrichten where SenderID = " + senderID + " ORDER BY Zeitstempel DESC LIMIT 1;";
+            DataTable sqlAbfrage;
+            sqlAbfrage = db.ExecuteTable(hochladenNachricht);
+            sqlAbfrage = db.ExecuteTable(getNachrichtenID);
+            foreach (DataRow zeile in sqlAbfrage.Rows)
+            {
+               nachrichtenID = Int32.Parse(zeile["NachrichtenID"].ToString());
+            }
+            string hochladenEmpfänger = "INSERT INTO `chatverlauf` (`EmpfängerID`, `NachrichtenID`) VALUES('" + empfängerID + "', '" + nachrichtenID + "')"; //letzter Eintrag wo Sender ID senderID(in diesem Fall 7) ist
+            sqlAbfrage = db.ExecuteTable(hochladenEmpfänger);
+            db.Close();
         }
     }
 }

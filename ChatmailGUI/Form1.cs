@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -29,7 +30,7 @@ namespace ChatmailGUI
         {
             foreach (Benutzer benutzer in controller.BenutzerLaden())
             {
-                comboBoxEmpfänger.Items.Add(benutzer.Name);
+                comboBoxEmpfänger.Items.Add(benutzer.Name + " - " + benutzer.ID);
             }
 
             
@@ -54,7 +55,10 @@ namespace ChatmailGUI
        
         private void buttonSenden_Click(object sender, EventArgs e)
         {
-            controller.zuSendenderText = textBoxNachrichtVerfassen.Text; 
+            controller.zuSendenderText = textBoxNachrichtVerfassen.Text;
+            string benutzerID = comboBoxEmpfänger.SelectedItem.ToString().Split('-')[1].Remove(0,1);
+            controller.empfängerID = Int32.Parse(benutzerID);
+            controller.NachrichtenSenden();
         }
 
         private void timerUpdateGui_Tick(object sender, EventArgs e)

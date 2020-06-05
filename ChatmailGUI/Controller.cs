@@ -11,6 +11,8 @@ namespace ChatmailGUI
     {
         Model model = new Model();
         public string zuSendenderText;
+        public int empfängerID;
+
         public List<Benutzer> BenutzerLaden()
         {
             return model.Benuterliste();
@@ -49,7 +51,9 @@ namespace ChatmailGUI
 
         public void NachrichtenSenden()
         {
-
+            model.zuSendenderText = zuSendenderText;
+            model.empfängerID = empfängerID;
+            model.NachrichtHochladen();
         }
 
 
