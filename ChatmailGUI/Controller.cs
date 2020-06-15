@@ -11,7 +11,7 @@ namespace ChatmailGUI
     {
         Model model = new Model();
         public string zuSendenderText;
-        public int empfängerID;
+        public int empfängerID;        
 
         public List<Benutzer> BenutzerLaden()
         {
@@ -20,25 +20,28 @@ namespace ChatmailGUI
 
         public List<List<String>> NachrichtenLaden() 
         {
-
             List<List<String>> nachrichtenListe = new List<List<string>>(); 
             foreach (Nachricht nachricht in model.NachrichtenListe())
             {
-                //Erstellen der Query um Benutzername des Senders zu bekommen
-                var senderNameQuery = from benutzer in model.Benuterliste()
-                            where benutzer.ID == nachricht.SenderID
-                            select benutzer.Name;
+                //Abfrage, ob Nachricht in Liste = für momentaner Benutzer (RobertBosch(7)) 
+                if(nachricht.Empfänger.Contains(model.aktuellerUser))
+                {
+                    //Erstellen der Query um Benutzername des Senders zu bekommen
+                    var senderNameQuery = from benutzer in model.Benuterliste()
+                                          where benutzer.ID == nachricht.SenderID
+                                          select benutzer.Name;
 
-                //neue Liste mit Nachrichteninhalt
-                List<string> nachrichten = new List<string>();
-                
-                string nachrichtenInfo = "> " + nachricht.Zeitstempel + " " + senderNameQuery.First() + ": ";
-                string nachrichtenText = nachricht.Text + "\n";
-                nachrichten.Add(nachrichtenInfo);
-                nachrichten.Add(nachrichtenText);
-                nachrichten.Add(nachricht.ID.ToString());
-                //Liste mit den einzelnen Nachrichten Objekten die den Inhalt NachrichtenInfo und Nachrichtentext haben
-                nachrichtenListe.Add(nachrichten);                
+                    //neue Liste mit Nachrichteninhalt
+                    List<string> nachrichten = new List<string>();
+
+                    string nachrichtenInfo = "> " + nachricht.Zeitstempel + " " + senderNameQuery.First() + ": ";
+                    string nachrichtenText = nachricht.Text + "\n";
+                    nachrichten.Add(nachrichtenInfo);
+                    nachrichten.Add(nachrichtenText);
+                    nachrichten.Add(nachricht.ID.ToString());
+                    //Liste mit den einzelnen Nachrichten Objekten die den Inhalt NachrichtenInfo und Nachrichtentext haben
+                    nachrichtenListe.Add(nachrichten);
+                }
             }
 
             return nachrichtenListe;
@@ -54,8 +57,12 @@ namespace ChatmailGUI
             model.zuSendenderText = zuSendenderText;
             model.empfängerID = empfängerID;
             model.NachrichtHochladen();
-        }
 
+        }
+        public bool NachrichtWurdeGesendet()
+        {
+            return model.nachrichtGesendet;
+        }
 
     }
 }

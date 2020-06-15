@@ -59,13 +59,26 @@ namespace ChatmailGUI
             string benutzerID = comboBoxEmpfänger.SelectedItem.ToString().Split('-')[1].Remove(0,1);
             controller.empfängerID = Int32.Parse(benutzerID);
             controller.NachrichtenSenden();
+            if (controller.NachrichtWurdeGesendet() == true)
+            {
+                richTextBoxEmfpangeneNachrichten.SelectionFont = new Font(richTextBoxEmfpangeneNachrichten.Font, FontStyle.Bold);
+                richTextBoxEmfpangeneNachrichten.SelectionColor = Color.Green;
+                richTextBoxEmfpangeneNachrichten.AppendText("> Nachricht wurde erfolgreich versendet!");
+            }
+            else
+            {
+                richTextBoxEmfpangeneNachrichten.SelectionFont = new Font(richTextBoxEmfpangeneNachrichten.Font, FontStyle.Bold);
+                richTextBoxEmfpangeneNachrichten.SelectionColor = Color.Red;
+                richTextBoxEmfpangeneNachrichten.AppendText("> Nachricht wurde nicht versendet! Versuchs erneut.");
+            }
+
         }
 
         private void timerUpdateGui_Tick(object sender, EventArgs e)
         {
             foreach (List<string> nachrichten in controller.NachrichtenLaden())
             {
-                if (!(nachrichtenLog.Contains(Int32.Parse(nachrichten[2]))))
+                if (!nachrichtenLog.Contains(Int32.Parse(nachrichten[2])))
                 {
                     richTextBoxEmfpangeneNachrichten.SelectionFont = new Font(richTextBoxEmfpangeneNachrichten.Font, FontStyle.Bold);
                     richTextBoxEmfpangeneNachrichten.AppendText(nachrichten[0]);
@@ -77,16 +90,6 @@ namespace ChatmailGUI
 
 
             }
-
-            
-            /*
-            Log-Liste 
-            if Ist ID in Log Liste
-            true: pass
-            else: richtTextBox.AppendText 
-                            richTextBoxEmfpangeneNachrichten.AppendText(nachrichten[1]);
-
-     */
         }
     }
 }

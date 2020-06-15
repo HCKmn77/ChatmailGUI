@@ -12,7 +12,7 @@ namespace ChatmailGUI
         public int  SenderID;
         public int ID;
         public string Zeitstempel;
-
+        public List<int> Empfänger = new List<int>();
        
 
 
