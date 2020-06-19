@@ -34,7 +34,7 @@ namespace ChatmailGUI
                     //neue Liste mit Nachrichteninhalt
                     List<string> nachrichten = new List<string>();
 
-                    string nachrichtenInfo = "> " + nachricht.Zeitstempel + " " + senderNameQuery.First() + ": ";
+                    string nachrichtenInfo = "> " + nachricht.Zeitstempel + " " + senderNameQuery.First() + ": \n";
                     string nachrichtenText = nachricht.Text + "\n";
                     nachrichten.Add(nachrichtenInfo);
                     nachrichten.Add(nachrichtenText);
