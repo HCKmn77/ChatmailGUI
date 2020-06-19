@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChatmail));
             this.groupBoxNachrichtVerfassen = new System.Windows.Forms.GroupBox();
             this.radioButtonDBVerbindung = new System.Windows.Forms.RadioButton();
             this.textBoxNachrichtVerfassen = new System.Windows.Forms.TextBox();
@@ -160,6 +161,7 @@
             this.ClientSize = new System.Drawing.Size(712, 506);
             this.Controls.Add(this.groupBoxEmpfangeneNachricht);
             this.Controls.Add(this.groupBoxNachrichtVerfassen);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(727, 543);
             this.Name = "FormChatmail";
