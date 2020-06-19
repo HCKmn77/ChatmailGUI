@@ -91,5 +91,10 @@ namespace ChatmailGUI
 
             }
         }
+
+        private void radioButtonDBVerbindung_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

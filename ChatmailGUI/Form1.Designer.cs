@@ -51,9 +51,11 @@
             this.groupBoxNachrichtVerfassen.Controls.Add(this.buttonSenden);
             this.groupBoxNachrichtVerfassen.Controls.Add(this.comboBoxEmpfänger);
             this.groupBoxNachrichtVerfassen.Controls.Add(this.labelEmpfänger);
-            this.groupBoxNachrichtVerfassen.Location = new System.Drawing.Point(12, 12);
+            this.groupBoxNachrichtVerfassen.Location = new System.Drawing.Point(16, 15);
+            this.groupBoxNachrichtVerfassen.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxNachrichtVerfassen.Name = "groupBoxNachrichtVerfassen";
-            this.groupBoxNachrichtVerfassen.Size = new System.Drawing.Size(510, 189);
+            this.groupBoxNachrichtVerfassen.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxNachrichtVerfassen.Size = new System.Drawing.Size(680, 233);
             this.groupBoxNachrichtVerfassen.TabIndex = 0;
             this.groupBoxNachrichtVerfassen.TabStop = false;
             this.groupBoxNachrichtVerfassen.Text = "Nachricht verfassen";
@@ -63,31 +65,35 @@
             this.radioButtonDBVerbindung.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonDBVerbindung.AutoSize = true;
             this.radioButtonDBVerbindung.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.radioButtonDBVerbindung.Location = new System.Drawing.Point(299, 20);
+            this.radioButtonDBVerbindung.Location = new System.Drawing.Point(403, 25);
+            this.radioButtonDBVerbindung.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonDBVerbindung.Name = "radioButtonDBVerbindung";
-            this.radioButtonDBVerbindung.Size = new System.Drawing.Size(96, 17);
+            this.radioButtonDBVerbindung.Size = new System.Drawing.Size(124, 21);
             this.radioButtonDBVerbindung.TabIndex = 4;
             this.radioButtonDBVerbindung.Text = "DB Verbindung";
             this.radioButtonDBVerbindung.UseVisualStyleBackColor = true;
+            this.radioButtonDBVerbindung.CheckedChanged += new System.EventHandler(this.radioButtonDBVerbindung_CheckedChanged);
             // 
             // textBoxNachrichtVerfassen
             // 
             this.textBoxNachrichtVerfassen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxNachrichtVerfassen.Location = new System.Drawing.Point(6, 46);
+            this.textBoxNachrichtVerfassen.Location = new System.Drawing.Point(8, 57);
+            this.textBoxNachrichtVerfassen.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNachrichtVerfassen.Multiline = true;
             this.textBoxNachrichtVerfassen.Name = "textBoxNachrichtVerfassen";
             this.textBoxNachrichtVerfassen.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxNachrichtVerfassen.Size = new System.Drawing.Size(498, 137);
+            this.textBoxNachrichtVerfassen.Size = new System.Drawing.Size(663, 168);
             this.textBoxNachrichtVerfassen.TabIndex = 2;
             // 
             // buttonSenden
             // 
             this.buttonSenden.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSenden.Location = new System.Drawing.Point(401, 17);
+            this.buttonSenden.Location = new System.Drawing.Point(535, 21);
+            this.buttonSenden.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSenden.Name = "buttonSenden";
-            this.buttonSenden.Size = new System.Drawing.Size(103, 23);
+            this.buttonSenden.Size = new System.Drawing.Size(137, 28);
             this.buttonSenden.TabIndex = 3;
             this.buttonSenden.Text = "Senden";
             this.buttonSenden.UseVisualStyleBackColor = true;
@@ -95,22 +101,24 @@
             // 
             // comboBoxEmpfänger
             // 
+            this.comboBoxEmpfänger.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEmpfänger.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBoxEmpfänger.FormattingEnabled = true;
-            this.comboBoxEmpfänger.Location = new System.Drawing.Point(70, 19);
+            this.comboBoxEmpfänger.Location = new System.Drawing.Point(93, 23);
+            this.comboBoxEmpfänger.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxEmpfänger.Name = "comboBoxEmpfänger";
-            this.comboBoxEmpfänger.Size = new System.Drawing.Size(173, 21);
+            this.comboBoxEmpfänger.Size = new System.Drawing.Size(228, 24);
             this.comboBoxEmpfänger.TabIndex = 1;
-            this.comboBoxEmpfänger.Text = "Empfänger wählen";
             // 
             // labelEmpfänger
             // 
             this.labelEmpfänger.AutoSize = true;
-            this.labelEmpfänger.Location = new System.Drawing.Point(6, 22);
+            this.labelEmpfänger.Location = new System.Drawing.Point(8, 27);
+            this.labelEmpfänger.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEmpfänger.Name = "labelEmpfänger";
-            this.labelEmpfänger.Size = new System.Drawing.Size(58, 13);
+            this.labelEmpfänger.Size = new System.Drawing.Size(81, 17);
             this.labelEmpfänger.TabIndex = 0;
-            this.labelEmpfänger.Text = "Empfänger";
+            this.labelEmpfänger.Text = "Empfänger:";
             // 
             // groupBoxEmpfangeneNachricht
             // 
@@ -118,9 +126,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxEmpfangeneNachricht.Controls.Add(this.richTextBoxEmfpangeneNachrichten);
-            this.groupBoxEmpfangeneNachricht.Location = new System.Drawing.Point(12, 207);
+            this.groupBoxEmpfangeneNachricht.Location = new System.Drawing.Point(16, 255);
+            this.groupBoxEmpfangeneNachricht.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxEmpfangeneNachricht.Name = "groupBoxEmpfangeneNachricht";
-            this.groupBoxEmpfangeneNachricht.Size = new System.Drawing.Size(510, 192);
+            this.groupBoxEmpfangeneNachricht.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxEmpfangeneNachricht.Size = new System.Drawing.Size(683, 238);
             this.groupBoxEmpfangeneNachricht.TabIndex = 1;
             this.groupBoxEmpfangeneNachricht.TabStop = false;
             this.groupBoxEmpfangeneNachricht.Text = "Empfangene Nachrichten";
@@ -130,9 +140,10 @@
             this.richTextBoxEmfpangeneNachrichten.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBoxEmfpangeneNachrichten.Location = new System.Drawing.Point(6, 19);
+            this.richTextBoxEmfpangeneNachrichten.Location = new System.Drawing.Point(8, 23);
+            this.richTextBoxEmfpangeneNachrichten.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBoxEmfpangeneNachrichten.Name = "richTextBoxEmfpangeneNachrichten";
-            this.richTextBoxEmfpangeneNachrichten.Size = new System.Drawing.Size(498, 167);
+            this.richTextBoxEmfpangeneNachrichten.Size = new System.Drawing.Size(663, 207);
             this.richTextBoxEmfpangeneNachrichten.TabIndex = 5;
             this.richTextBoxEmfpangeneNachrichten.Text = "";
             // 
@@ -144,12 +155,13 @@
             // 
             // FormChatmail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 411);
+            this.ClientSize = new System.Drawing.Size(712, 506);
             this.Controls.Add(this.groupBoxEmpfangeneNachricht);
             this.Controls.Add(this.groupBoxNachrichtVerfassen);
-            this.MinimumSize = new System.Drawing.Size(550, 450);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(727, 543);
             this.Name = "FormChatmail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chatmail";
@@ -168,10 +180,10 @@
         private System.Windows.Forms.Label labelEmpfänger;
         private System.Windows.Forms.Button buttonSenden;
         private System.Windows.Forms.TextBox textBoxNachrichtVerfassen;
-        private System.Windows.Forms.RadioButton radioButtonDBVerbindung;
-        private System.Windows.Forms.Timer timerUpdateGui;
         public System.Windows.Forms.ComboBox comboBoxEmpfänger;
         private System.Windows.Forms.RichTextBox richTextBoxEmfpangeneNachrichten;
+        public System.Windows.Forms.Timer timerUpdateGui;
+        public System.Windows.Forms.RadioButton radioButtonDBVerbindung;
     }
 }
 

@@ -1,7 +1,9 @@
 ﻿using it.schule;
+using Renci.SshNet.Messages;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Windows.Forms;
 
 namespace ChatmailGUI
 {
@@ -20,10 +22,37 @@ namespace ChatmailGUI
         }
 
 
+        public void verbindungHerstellen()
+        {
+            FormChatmail form1 = (FormChatmail)Application.OpenForms[0];
+
+            try
+            {
+                db.Open();
+                form1.radioButtonDBVerbindung.Checked = true;
+            }
+            catch (Exception)
+            {
+                form1.timerUpdateGui.Stop();
+                form1.timerUpdateGui.Enabled = false;
+                form1.radioButtonDBVerbindung.Checked = false;
+                var ergebnis = MessageBox.Show("Datenbank nicht erreichbar! Willst du das Programm neu starten?", "Datenbank nicht erreichbar!", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                if (ergebnis == DialogResult.Yes)
+                {
+                    Application.Restart();
+                    Environment.Exit(0);
+                }
+                else {
+
+                     Environment.Exit(0);
+                }
+                throw;
+            }
+        }
 
         public List<Benutzer> Benuterliste()
         {
-            db.Open();
+            verbindungHerstellen();
             List<Benutzer> benutzerListe = new List<Benutzer>();
             DataTable benutzerTabelle = db.ExecuteTable("Select * from Benutzer");
 
@@ -40,7 +69,7 @@ namespace ChatmailGUI
 
         public List<Nachricht> NachrichtenListe()
         {
-            db.Open();
+            verbindungHerstellen();
             List<Nachricht> nachrichtenListe = new List<Nachricht>();
             DataTable nachrichtenTabelle = db.ExecuteTable("Select * from Nachrichten");
             DataTable chatverlauf = db.ExecuteTable("Select * from Chatverlauf");
@@ -72,7 +101,7 @@ namespace ChatmailGUI
 
         public void NachrichtHochladen()
         {
-            db.Open();
+            verbindungHerstellen();
             int nachrichtenID = 0;
             int vorherigeNachrichtenID = 0;
 
