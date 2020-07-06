@@ -25,7 +25,8 @@ namespace ChatmailGUI
         public void verbindungHerstellen()
         {
             FormChatmail form1 = (FormChatmail)Application.OpenForms[0];
-
+            //Versuch die Datenbank zu öffnen -> Wenn geöffnet: Radio Button ist ausgefüllt
+            //                                -> Wenn nicht   : Radio Button nicht ausgefüllt + PopUp
             try
             {
                 db.Open();
