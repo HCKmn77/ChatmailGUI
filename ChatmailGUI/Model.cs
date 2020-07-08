@@ -21,7 +21,6 @@ namespace ChatmailGUI
 
         }
 
-
         public void verbindungHerstellen()
         {
             FormChatmail form1 = (FormChatmail)Application.OpenForms[0];

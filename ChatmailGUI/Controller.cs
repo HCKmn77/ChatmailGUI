@@ -47,10 +47,6 @@ namespace ChatmailGUI
             return nachrichtenListe;
                 }
 
-        public void VerbindungPrüfen()
-        {
-
-        }
 
         public void NachrichtenSenden()
         {
