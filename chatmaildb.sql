@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 19. Jun 2020 um 14:43
+-- Erstellungszeit: 22. Jul 2020 um 10:39
 -- Server-Version: 10.4.11-MariaDB
 -- PHP-Version: 7.2.31
 
@@ -41,7 +41,8 @@ INSERT INTO `benutzer` (`BenutzerID`, `Namen`) VALUES
 (2, 'Jonas Kaufmann'),
 (5, 'Max Mustermann'),
 (7, 'Robert Bosch'),
-(8, 'Bassem Serhan');
+(8, 'Bassem Serhan'),
+(11, 'Marie-Luise Müller');
 
 -- --------------------------------------------------------
 
@@ -60,11 +61,16 @@ CREATE TABLE `chatverlauf` (
 
 INSERT INTO `chatverlauf` (`EmpfängerID`, `NachrichtenID`) VALUES
 (1, 2),
+(1, 9),
 (2, 1),
+(2, 11),
 (5, 6),
 (7, 3),
 (7, 4),
-(7, 5);
+(7, 5),
+(7, 7),
+(11, 8),
+(11, 10);
 
 -- --------------------------------------------------------
 
@@ -89,7 +95,12 @@ INSERT INTO `nachrichten` (`NachrichtenID`, `NachrichtenInhalt`, `Zeitstempel`, 
 (3, 'Hallo Robert, danke das ich für dich arbeiten darf!', '2020-06-19 12:27:47', 1),
 (4, 'Hallo Robert, wann kommt die besprochene Gehaltserhöhung?', '2020-06-19 12:28:39', 2),
 (5, 'Hi Robert, ich muss deine Azubis sehr loben, sie haben ein hervorragendes Chat Programm entwickelt! :)', '2020-06-19 12:30:27', 8),
-(6, 'Hallo mein Freund', '2020-06-19 12:34:55', 7);
+(6, 'Hallo mein Freund', '2020-06-19 12:34:55', 7),
+(7, '', '2020-07-06 09:55:41', 7),
+(8, 'Hallo Marie', '2020-07-06 09:58:46', 7),
+(9, 'Hallo Jeremia', '2020-07-06 10:08:11', 7),
+(10, 'HI ', '2020-07-08 10:48:08', 7),
+(11, 'Hi', '2020-07-08 12:17:34', 7);
 
 -- --------------------------------------------------------
 
@@ -146,13 +157,13 @@ ALTER TABLE `verbindungstest`
 -- AUTO_INCREMENT für Tabelle `benutzer`
 --
 ALTER TABLE `benutzer`
-  MODIFY `BenutzerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `BenutzerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT für Tabelle `nachrichten`
 --
 ALTER TABLE `nachrichten`
-  MODIFY `NachrichtenID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `NachrichtenID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT für Tabelle `verbindungstest`
