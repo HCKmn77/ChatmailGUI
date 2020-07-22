@@ -95,7 +95,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Benutzer.cs" />
-    <Compile Include="ChatVerlauf.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="DBconnector_MySql.cs" />
     <Compile Include="Form1.cs">

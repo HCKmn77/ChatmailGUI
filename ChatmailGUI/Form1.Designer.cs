@@ -73,7 +73,6 @@
             this.radioButtonDBVerbindung.TabIndex = 4;
             this.radioButtonDBVerbindung.Text = "DB Verbindung";
             this.radioButtonDBVerbindung.UseVisualStyleBackColor = true;
-            this.radioButtonDBVerbindung.CheckedChanged += new System.EventHandler(this.radioButtonDBVerbindung_CheckedChanged);
             // 
             // textBoxNachrichtVerfassen
             // 
